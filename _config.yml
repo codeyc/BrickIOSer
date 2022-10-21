@@ -1,1 +1,77 @@
-theme: jekyll-theme-architect
+# Site settings
+title: Brick iOSer 
+email: ethan.yinc@gmail.com
+description: >
+  专业原生 IOS 开发 外包 培训 教程
+lang: en-US
+
+# baseurl: "/jekyll-doc-theme" # the subpath of your site, e.g. /blog/
+baseurl: "/" # the subpath of your site, e.g. /blog/
+# url: https://aksakalli.github.io/jekyll-doc-theme # the base hostname & protocol for your site
+url: http://localhost # the base hostname & protocol for your site
+# url: https://aksakalli.github.io/jekyll-doc-theme # the base hostname & protocol for your site
+git_address: https://github.com/aksakalli/jekyll-doc-theme
+git_edit_address: https://github.com/aksakalli/jekyll-doc-theme/blob/gh-pages
+
+# theme options from https://bootswatch.com/3/
+# comment out this to use default Bootstrap
+bootwatch: slate # cerulean cosmo custom cyborg darkly flatly journal lumen readable sandstone simplex slate solar spacelab superhero united yeti
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+# Plugins (previously gems:)
+plugins:
+  - jekyll-feed
+  - jekyll-redirect-from
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - .idea/
+  - .gitignore
+  - README.md
+  - vendor
+  - _aMyMD
+  - b_Doc
+  - b_Vedio2022v1
+  
+timezone: Asia/Shanghai
+defaults:
+- scope:
+    path: _posts
+    type: posts
+  values:
+    layout: post
+    sectionid: blog
+
+- scope:
+    path: _docs
+    type: docs
+  values:
+    layout: docs
+    sectionid: docs
+    seo:
+      type: "WebPage"
+
+- scope:
+    path: _docs2
+    type: docs2
+  values:
+    layout: docs2
+    sectionid: docs2
+    seo:
+      type: "WebPage"      
+
+collections:
+  docs:
+    permalink: /:collection/:path/
+    output: true
+  docs2:
+    permalink: /:collection/:path/
+    output: true    
+  posts:
+    permalink: /blog/:year/:month/:day/:title/
+    output: true
